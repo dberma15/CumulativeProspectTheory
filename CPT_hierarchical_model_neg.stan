@@ -5,18 +5,9 @@ functions {
 }
 
 data{
-  int<lower=1> N;
-  
   int items_n_neg;    #integer indicating where the positive data starts
   int rawdata[items_n_neg]; #1s and 0s indicating subject's choice. Rawdata equals 1 means the subject choose option B.
-  real beta_upper;
-  real beta_lower;
-  real delta_upper;
-  real delta_lower;
-  real lambda_upper;
-  real lambda_lower;
-  real luce_upper;
-  real luce_lower;
+  
   #The prospect data should contain four columns:
   #Column 1: Value1
   #Column 2: probability of Value1
@@ -59,10 +50,10 @@ transformed data{
 
 #parameters of interest
 parameters{
-  real<lower=beta_lower,upper=beta_upper> beta;
-  real<lower=delta_lower,upper=delta_upper> delta;
-  real<lower=lambda_lower, upper=lambda_upper> lambda;
-  real<lower=luce_lower, upper=luce_upper> luce;
+  real<lower=0,upper=1> beta;
+  real<lower=0,upper=1> delta;
+  real<lower=1, upper=5> lambda;
+  real<lower=0.5, upper=1.5> luce;
 }
 
 

@@ -5,26 +5,17 @@ functions {
 }
 
 data{
-  int<lower=1> N;
-  
   int items_n_pos;    #integer indicating where the positive data starts
-  #int items_n_neg;    #integer indicating where the negative data starts
   int rawdata[items_n_pos]; #1s and 0s indicating subject's choice. Rawdata equals 1 means the subject choose option B.
-  real alpha_upper;
-  real alpha_lower;
-  real gamma_upper;
-  real gamma_lower;
-  real luce_upper;
-  real luce_lower;
+
   #The prospect data should contain four columns:
   #Column 1: Value1
   #Column 2: probability of Value1
   #Column 3: Value2
   #Column 4: probability of Value4
   matrix[items_n_pos,4] prospects_a_pos;  #Option A, positive data.
-  #matrix[items_n_neg-items_n_pos,4] prospects_a_neg; #Option A, negative data 
   matrix[items_n_pos,4] prospects_b_pos;  #Option B, positive data 
-  #matrix[items_n_neg-items_n_pos,4] prospects_b_neg; #Option B, negative data 
+  
 }
 
 #Transformed data breaks the prospects into individual vectors so it's easier to manipulate. 
@@ -81,12 +72,9 @@ transformed data{
 
 #parameters of interest
 parameters{
-  real<lower=alpha_lower,upper=alpha_upper> alpha;
-  #real<lower=beta_lower,upper=beta_upper> beta;
-  #real<lower=delta_lower,upper=delta_upper> delta;
-  real<lower=gamma_lower,upper=gamma_upper> gamma;
-  #real<lower=lambda_lower, upper=lambda_upper> lambda;
-  real<lower=luce_lower, upper=luce_upper> luce;
+  real<lower=0,upper=1> alpha;
+  real<lower=0,upper=1> gamma;
+  real<lower=.5, upper=1.5> luce;
 }
 
 
