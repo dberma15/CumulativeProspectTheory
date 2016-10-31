@@ -1,2 +1,2 @@
 # CumulativeProspectTheory
-Code that uses Bayesian Statistics to estimate the parameters for Cumulative Prospect Theory
+The files uploaded run Bayesian Parameter Estimation for Cumulative Prospect Theory. The R code loads in the data and runs RStan to execute the Bayesian parameter estimation. 
