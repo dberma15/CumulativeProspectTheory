@@ -8,25 +8,44 @@ There are two ways to use the code. The first is running it on data to determine
 
 ### Experimental Use
  Set testingKnownData=0
+ 
  Set the workingDirectory
+ 
  Set the nameOfFilesSave to say where to save the data
+ 
  firstSubject- the index (in rawdata) of the first subject being run. If you are running all the subjects, just set to 1.
+ 
  subsetOfSubjects - the position of the last subject being run in the data files.
+ 
  prospects_b - option B. There should be four columns for each subject in the data file. Columns are tab separated.
+ 
                  The file should have the following structure:
+                 
                  Column 1 - value of outcome 1 for the first subject
+                 
                  Column 2 - probability of outcome 1  for the first subject
+                 
                  Column 3 - value of outcome 2 for the first subject
+                 
                  Column 4 - probability of outcome 2 for the first subject
+                 
                  Repeat for n subjects. 
+                 
                  If this is a sure option, then the values entered for columns 3 and 4 should be 0.
+                 
                  Example: An option will return 100 10% of the time, and 50 90% of the time.
+                 
                           In the data it will appear as 100  .1  50  .9
+                 
                  Add the 2nd subject's data in the 5th through 8th columns and the 3rd subject's in the 9th through 12th columns, and so forth. 
+                 
                  If the number of trials is not equal across subjects, enter NaN in the text file until the total number of rows is equal.
+ 
  prospects_a - See prospects_b
+ 
  rawdata - contains the subjects choices. A 1 indicates prospects_b was chosen, a 0 indicates prospects_a was chosen. Each subject's data is
-             in a column. If the number of trials is not equal across subjects, enter NaN in the text file until the total number of rows is equal.
+ in a column. If the number of trials is not equal across subjects, enter NaN in the text file until the total number of rows is equal.
+ 
  items_n - 3xn row of numbers indicating how many data points exist for each subject, excluding NaNs. The first row contains the number of positive only
              data points. The second row contains the number of negative only data points. The third row contains the number of mixed (positive and
              negative only) data points. If you have positive and negative data and you only want one set of parameters, you need only the third row. If 
