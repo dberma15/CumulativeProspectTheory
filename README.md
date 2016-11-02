@@ -55,3 +55,31 @@ There are two ways to use the code. The first is running it on data to determine
 ### Testing use.
  If you are testing and want to check how the code works by generating data from known parameters, set the following parameters to the files continaing  them:
  knownAlpha, knownBeta, knownGamma, knownDelta, knownLambda, knownLuce - These are the known values of the parameters alpha, gamma, and luce where alpha=(0,1), beta=(0,1), gamma=(0,1), delta=(0,1), Lambda=(1,5), luce=(.5,1.5)
+
+## Data
+The data folder contains 300 randomly generated data sets using randomly generated parameters. The files with the parameters in the name contain the parameters for each subject. The data is stored in the folders dataset18, dataset17, and dataset16. Each folder contains choice option A, choice option B, choice data, and the items_n file. 
+
+dataset16: uses outcomes and probabilities are randomly generated values.
+
+dataset17: uses outcome results that are a larger scale than dataset17. The outcome values are -4, -3, -2, 0, 2, 3, and 4. The probabilities are .2, .5, and .8.
+
+dataset18: uses outcome results that are a larger scale than dataset17. The outcome values are -75, -50, -25, 0, 25, 50, and 75. The probabilities are .2, .5, and .8
+
+## Results
+The results folder contains the results of using the CPT bayesian estimation code on a data set.
+
+The data is coded as follows:
+     
+     - "all" means that positive, negative, and mixed were used
+     - "mixed" means that only mixed were used
+     - "negative" means that only negative options were used
+     - "positive" means that only positive options were used
+     - "var" means that a random number between 0 and 10 was choosen for each subject and each type of data. That number of decision events was removed. Example: a subject with all might have gotten 8,0,5. Therefore 8 decisions were removed from positive, 0 from negative, and 5 from mixed.
+     - Number indicates what the maximum number of decision events there were in that file (not separated by type so positive 539 means there were 539 decision events across the positive, negative and mixed decision events).
+     
+Within each folder are:
+
+    - The .csv files with "parameter"estimate_dataset in the name that that has the estimates of each parameter, including the standard deviation, the median, and the 95% and 75% confidence intervals. 
+    - The .png files that contain plots of the actual parameter values vs the estiamted parameter values with 95% error bars and a fit line
+    - The .csv file with covariancematrixestimate that contains all the covariance matrices produced in estimating the data
+    - The .csv file with chisquared in the name. This file lists the chi squared value and the degrees of freedom for each parameter and all the parameter values using the covariance matrix.
