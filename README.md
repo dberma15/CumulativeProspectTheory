@@ -3,6 +3,29 @@ The files uploaded run Bayesian Parameter Estimation for Cumulative Prospect The
 
 There are six files. Two files for data with only positive valued gamble options. Two files for data with only negative valued gample options. Two files for data with positive and negative valued gamble options. According to CPT, there are two sets of parameters: one for positive values and one for negative values. Therefore, separating the estimation into positive, negative, and mixed is necessary, as the absence of positive or negative values means there is no data to estimate parameters.
 
+An important note is that for negative only data, it is impossible to estimate lambda and phi(also called luce). The reason comes from the form CPT. Given two options to choose from A and B, both with outcomes x and probabilities p. 
+
+Outcomes and probabilities associated with positive outcomes are weighted using the formulas:
+         
+         v(x+)=x^alpha
+         w(p+)= p^gamma/(p^gamma - (1-p)^gamma)^(1/gamma)
+Outcomes and probabilities associated with positive outcomes are weighted using the formulas:
+                  
+         v(x-)=lambda*x^beta
+         w(p-)= p^delta/(p^delta - (1-p)^delta)^(1/delta)
+The value of option is now:
+     
+     A=SUM(v(x_i)*w(p_i))
+     
+The likelihood of a subject choosing option B over option A is then:
+    
+    Pr(B>A)= 1/(1+exp(luce*(B-A)))
+
+If all outcomes are negative, the 
+
+    B-A=SUM(lambda*x_j^beta*w(p_j))-SUM(lambda*x_j^beta*w(p_j))=lambda*(SUM(x_j^beta*w(p_j))-SUM(x_j^beta*w(p_j)))
+So effectively lambda and luce become lambda * luce and cannot be estimated separately. 
+         
 ## How to use the code
 There are two ways to use the code. The first is running it on data to determine the parameters for CPT. The other is to validate it. This is the same for all three R files.
 
