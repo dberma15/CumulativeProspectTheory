@@ -4,7 +4,7 @@ The files uploaded run Bayesian Parameter Estimation for Cumulative Prospect The
 There are six files. Two files for data with only positive valued gamble options. Two files for data with only negative valued gample options. Two files for data with positive and negative valued gamble options. According to CPT, there are two sets of parameters: one for positive values and one for negative values. Therefore, separating the estimation into positive, negative, and mixed is necessary, as the absence of positive or negative values means there is no data to estimate parameters.
 
 ## How to use the code
-There are two ways to use the code. The first is running it on data to determine the parameters for CPT. The other is to validate it.
+There are two ways to use the code. The first is running it on data to determine the parameters for CPT. The other is to validate it. This is the same for all three R files.
 
 ### Experimental Use
  Set testingKnownData=0
@@ -45,6 +45,7 @@ There are two ways to use the code. The first is running it on data to determine
              data points. The second row contains the number of negative only data points. The third row contains the number of mixed (positive and
              negative only) data points. If you have positive and negative data and you only want one set of parameters, you need only the third row. If 
              htat is the case, you can set the other rows to 0. 
+             
              If subjects 1, 2, 3, and 4 had 100, 130, 124, and 0 positive only data points, 0, 10, 20, and 200 negative only data points, the file would
              look like this:
              100 130 124 0
