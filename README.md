@@ -19,27 +19,22 @@ There are two ways to use the code. The first is running it on data to determine
  
  prospects_b - option B. There should be four columns for each subject in the data file. Columns are tab separated.
  
-                 The file should have the following structure:
-                 
-                 Column 1 - value of outcome 1 for the first subject
-                 
-                 Column 2 - probability of outcome 1  for the first subject
-                 
-                 Column 3 - value of outcome 2 for the first subject
-                 
-                 Column 4 - probability of outcome 2 for the first subject
-                 
-                 Repeat for n subjects. 
-                 
-                 If this is a sure option, then the values entered for columns 3 and 4 should be 0.
-                 
-                 Example: An option will return 100 10% of the time, and 50 90% of the time.
-                 
-                          In the data it will appear as 100  .1  50  .9
-                 
-                 Add the 2nd subject's data in the 5th through 8th columns and the 3rd subject's in the 9th through 12th columns, and so forth. 
-                 
-                 If the number of trials is not equal across subjects, enter NaN in the text file until the total number of rows is equal.
+     The file should have the following structure:
+     
+     Column 1 - value of outcome 1 for the first subject
+     
+     Column 2 - probability of outcome 1  for the first subject
+     
+     Column 3 - value of outcome 2 for the first subject
+     
+     Column 4 - probability of outcome 2 for the first subject
+     
+     Repeat for n subjects. 
+     
+     If this is a sure option, then the values entered for columns 3 and 4 should be 0.
+     Example: An option will return 100 10% of the time, and 50 90% of the time. In the data it will appear as 100  .1  50  .9
+     
+     Add the 2nd subject's data in the 5th through 8th columns and the 3rd subject's in the 9th through 12th columns, and so forth. If the number of trials is not equal across subjects, enter NaN in the text file until the total number of rows is equal.
  
  prospects_a - See prospects_b
  
